@@ -10,11 +10,16 @@ import {
   Book,
   FileText,
   Zap,
-  HelpCircle
+  HelpCircle,
+  Wand2,
+  GripVertical,
+  Layers,
+  Copy
 } from 'lucide-react';
 
 export const AdminCourseEditor = ({ user }) => {
   const navigate = useNavigate();
+  const [isGenerating, setIsGenerating] = useState(false);
   const [course, setCourse] = useState({
     title_en: '',
     title_rw: '',
@@ -26,6 +31,40 @@ export const AdminCourseEditor = ({ user }) => {
     topics: []
   });
 
+  const handleAiGenerate = async () => {
+    if (!course.title_en) {
+      alert('Please enter a course topic in the English Title field first.');
+      return;
+    }
+    
+    setIsGenerating(true);
+    try {
+      const res = await fetch('/api/ai/generate-course', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          topic: course.title_en,
+          category: course.category
+        })
+      });
+      const data = await res.json();
+      if (data.success) {
+        setCourse({
+          ...course,
+          ...data.course,
+          topics: data.course.topics.map(t => ({
+            ...t,
+            id: t.id || `topic-${Date.now()}-${Math.random()}`
+          }))
+        });
+      }
+    } catch (err) {
+      alert('AI Generation failed: ' + err.message);
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
   const addTopic = () => {
     const newTopic = {
       id: `topic-${Date.now()}`,
@@ -34,6 +73,17 @@ export const AdminCourseEditor = ({ user }) => {
       assessment: []
     };
     setCourse({ ...course, topics: [...course.topics, newTopic] });
+  };
+
+  const moveTopic = (idx, direction) => {
+    const newTopics = [...course.topics];
+    const targetIdx = idx + direction;
+    if (targetIdx < 0 || targetIdx >= newTopics.length) return;
+    
+    const temp = newTopics[idx];
+    newTopics[idx] = newTopics[targetIdx];
+    newTopics[targetIdx] = temp;
+    setCourse({ ...course, topics: newTopics });
   };
 
   const addQuestion = (topicIdx) => {
@@ -97,7 +147,8 @@ export const AdminCourseEditor = ({ user }) => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto pb-20 space-y-8">
+    <div className="max-w-5xl mx-auto pb-20 space-y-8">
+      {/* Header Actions */}
       <div className="flex items-center justify-between">
         <button 
           onClick={() => navigate('/admin')}
@@ -106,178 +157,295 @@ export const AdminCourseEditor = ({ user }) => {
           <ArrowLeft className="w-4 h-4" />
           <span>BACK TO DASHBOARD</span>
         </button>
-        <button 
-          onClick={handleSave}
-          className="flex items-center gap-2 px-6 py-2.5 bg-blue-900 text-white rounded-xl text-xs font-bold shadow-lg shadow-blue-200 active:scale-95 transition-all"
-        >
-          <Save className="w-4 h-4" />
-          <span>PUBLISH COURSE</span>
-        </button>
-      </div>
-
-      <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-8 space-y-6">
-        <h2 className="text-sm font-black text-blue-950 uppercase tracking-tight flex items-center gap-2">
-          <Book className="w-4 h-4 text-blue-600" />
-          General Information
-        </h2>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <label className="text-[10px] font-mono font-bold text-slate-500 uppercase">Title (English)</label>
-            <input 
-              type="text" 
-              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs focus:ring-2 focus:ring-blue-500/20 outline-none"
-              value={course.title_en}
-              onChange={e => setCourse({...course, title_en: e.target.value})}
-            />
-          </div>
-          <div className="space-y-2">
-            <label className="text-[10px] font-mono font-bold text-slate-500 uppercase">Title (Kinyarwanda)</label>
-            <input 
-              type="text" 
-              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs focus:ring-2 focus:ring-blue-500/20 outline-none"
-              value={course.title_rw}
-              onChange={e => setCourse({...course, title_rw: e.target.value})}
-            />
-          </div>
-          <div className="space-y-2">
-            <label className="text-[10px] font-mono font-bold text-slate-500 uppercase">Category</label>
-            <select 
-              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs outline-none"
-              value={course.category}
-              onChange={e => setCourse({...course, category: e.target.value})}
-            >
-              <option>Digital Skills</option>
-              <option>Language</option>
-              <option>Business</option>
-              <option>Agriculture</option>
-            </select>
-          </div>
-          <div className="space-y-2">
-            <label className="text-[10px] font-mono font-bold text-slate-500 uppercase">Instructor Name</label>
-            <input 
-              type="text" 
-              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs outline-none"
-              value={course.instructor_name}
-              onChange={e => setCourse({...course, instructor_name: e.target.value})}
-            />
-          </div>
-        </div>
-      </div>
-
-      <div className="space-y-4">
-        <div className="flex items-center justify-between px-2">
-          <h2 className="text-sm font-black text-blue-950 uppercase tracking-tight flex items-center gap-2">
-            <FileText className="w-4 h-4 text-blue-600" />
-            Curriculum Topics ({course.topics.length})
-          </h2>
+        <div className="flex items-center gap-3">
           <button 
-            onClick={addTopic}
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg text-[10px] font-bold hover:bg-blue-100 transition-colors"
+            onClick={handleAiGenerate}
+            disabled={isGenerating}
+            className={`flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl text-xs font-bold shadow-lg shadow-blue-200 active:scale-95 transition-all ${isGenerating ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
-            <Plus className="w-3.5 h-3.5" />
-            ADD TOPIC
+            <Wand2 className={`w-4 h-4 ${isGenerating ? 'animate-spin' : ''}`} />
+            <span>{isGenerating ? 'GENERATING...' : 'AI SUGGEST TOPICS'}</span>
+          </button>
+          <button 
+            onClick={handleSave}
+            className="flex items-center gap-2 px-6 py-2.5 bg-blue-900 text-white rounded-xl text-xs font-bold shadow-lg shadow-blue-200 active:scale-95 transition-all"
+          >
+            <Save className="w-4 h-4" />
+            <span>PUBLISH COURSE</span>
           </button>
         </div>
+      </div>
 
-        {course.topics.map((topic, tIdx) => (
-          <div key={topic.id} className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
-            <div className="p-4 bg-slate-50 flex items-center justify-between">
-              <span className="text-[10px] font-mono font-bold text-slate-400 uppercase">Topic #{tIdx + 1}</span>
-              <button onClick={() => {
-                const updated = course.topics.filter((_, i) => i !== tIdx);
-                setCourse({...course, topics: updated});
-              }} className="text-red-400 hover:text-red-600">
-                <Trash2 className="w-4 h-4" />
-              </button>
-            </div>
-            <div className="p-6 space-y-6">
-              <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Left Sidebar: Settings */}
+        <div className="space-y-6">
+          <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 space-y-6">
+            <h2 className="text-sm font-black text-blue-950 uppercase tracking-tight flex items-center gap-2">
+              <Settings className="w-4 h-4 text-blue-600" />
+              Settings
+            </h2>
+            
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <label className="text-[10px] font-mono font-bold text-slate-500 uppercase">Title (English)</label>
                 <input 
-                  placeholder="Topic Title (EN)"
-                  className="bg-white border border-slate-200 rounded-xl px-4 py-2 text-xs outline-none"
-                  value={topic.title.en}
-                  onChange={e => {
-                    const updated = [...course.topics];
-                    updated[tIdx].title.en = e.target.value;
-                    setCourse({...course, topics: updated});
-                  }}
-                />
-                <input 
-                  placeholder="Topic Title (RW)"
-                  className="bg-white border border-slate-200 rounded-xl px-4 py-2 text-xs outline-none"
-                  value={topic.title.rw}
-                  onChange={e => {
-                    const updated = [...course.topics];
-                    updated[tIdx].title.rw = e.target.value;
-                    setCourse({...course, topics: updated});
-                  }}
+                  type="text" 
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs focus:ring-2 focus:ring-blue-500/20 outline-none"
+                  value={course.title_en}
+                  onChange={e => setCourse({...course, title_en: e.target.value})}
+                  placeholder="e.g. Digital Marketing"
                 />
               </div>
-              <textarea 
-                placeholder="Learning Notes (EN)"
-                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-xs outline-none min-h-[100px]"
-                value={topic.notes.en}
-                onChange={e => {
-                  const updated = [...course.topics];
-                  updated[tIdx].notes.en = e.target.value;
-                  setCourse({...course, topics: updated});
-                }}
-              />
-              
-              <div className="space-y-4 pt-4 border-t border-slate-100">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-[10px] font-mono font-bold text-red-600 uppercase flex items-center gap-1.5">
-                    <Zap className="w-3.5 h-3.5" />
-                    Unit Quiz ({topic.assessment.length} Questions)
-                  </h3>
+              <div className="space-y-2">
+                <label className="text-[10px] font-mono font-bold text-slate-500 uppercase">Category</label>
+                <select 
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs outline-none"
+                  value={course.category}
+                  onChange={e => setCourse({...course, category: e.target.value})}
+                >
+                  <option>Digital Skills</option>
+                  <option>Language</option>
+                  <option>Business</option>
+                  <option>Agriculture</option>
+                </select>
+              </div>
+              <div className="space-y-2">
+                <label className="text-[10px] font-mono font-bold text-slate-500 uppercase">Difficulty Level</label>
+                <div className="grid grid-cols-3 gap-2">
+                  {['Beginner', 'Intermediate', 'Advanced'].map(level => (
+                    <button
+                      key={level}
+                      onClick={() => setCourse({...course, difficulty: level})}
+                      className={`py-2 text-[10px] font-bold rounded-lg border transition-all ${course.difficulty === level ? 'bg-blue-900 border-blue-900 text-white shadow-md' : 'bg-white border-slate-200 text-slate-600 hover:border-blue-200'}`}
+                    >
+                      {level}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-blue-900 rounded-3xl p-6 text-white space-y-4 shadow-xl shadow-blue-200">
+            <h3 className="text-xs font-black uppercase tracking-widest flex items-center gap-2">
+              <Zap className="w-4 h-4 text-amber-400" />
+              Pro Tip
+            </h3>
+            <p className="text-[11px] text-blue-100 leading-relaxed">
+              Use the **AI Suggest** button to generate a complete course structure including quizzes and Kinyarwanda translations based on your title.
+            </p>
+          </div>
+        </div>
+
+        {/* Right Content: Slide Builder */}
+        <div className="lg:col-span-2 space-y-4">
+          <div className="flex items-center justify-between px-2">
+            <h2 className="text-sm font-black text-blue-950 uppercase tracking-tight flex items-center gap-2">
+              <Layers className="w-4 h-4 text-blue-600" />
+              Course Slides ({course.topics.length})
+            </h2>
+            <button 
+              onClick={addTopic}
+              className="flex items-center gap-1.5 px-4 py-2 bg-white border border-slate-200 text-blue-900 rounded-xl text-[10px] font-bold hover:shadow-md transition-all active:scale-95"
+            >
+              <Plus className="w-3.5 h-3.5" />
+              ADD NEW SLIDE
+            </button>
+          </div>
+
+          {course.topics.length === 0 && (
+            <div className="bg-slate-50 border-2 border-dashed border-slate-200 rounded-3xl p-12 text-center space-y-3">
+              <div className="w-12 h-12 bg-slate-100 rounded-2xl flex items-center justify-center mx-auto">
+                <FileText className="w-6 h-6 text-slate-400" />
+              </div>
+              <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">No content added yet</p>
+              <button 
+                onClick={handleAiGenerate}
+                className="text-blue-600 text-xs font-bold hover:underline"
+              >
+                Let AI build the structure for you
+              </button>
+            </div>
+          )}
+
+          {course.topics.map((topic, tIdx) => (
+            <div key={topic.id} className="bg-white rounded-3xl border border-slate-200 shadow-sm group hover:border-blue-200 transition-all">
+              {/* Slide Toolbar */}
+              <div className="px-6 py-3 bg-slate-50/50 border-b border-slate-100 flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-1">
+                    <button 
+                      onClick={() => moveTopic(tIdx, -1)}
+                      disabled={tIdx === 0}
+                      className="p-1 hover:bg-white rounded disabled:opacity-30"
+                    >
+                      <ChevronUp className="w-3.5 h-3.5" />
+                    </button>
+                    <button 
+                      onClick={() => moveTopic(tIdx, 1)}
+                      disabled={tIdx === course.topics.length - 1}
+                      className="p-1 hover:bg-white rounded disabled:opacity-30"
+                    >
+                      <ChevronDown className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                  <span className="text-[10px] font-mono font-bold text-slate-400 uppercase">Slide #{tIdx + 1}</span>
+                </div>
+                <div className="flex items-center gap-2">
                   <button 
-                    onClick={() => addQuestion(tIdx)}
-                    className="text-[10px] font-bold text-blue-600 hover:underline"
+                    onClick={() => {
+                      const cloned = JSON.parse(JSON.stringify(topic));
+                      cloned.id = `topic-${Date.now()}`;
+                      const updated = [...course.topics];
+                      updated.splice(tIdx + 1, 0, cloned);
+                      setCourse({...course, topics: updated});
+                    }}
+                    className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
                   >
-                    + Add Question
+                    <Copy className="w-3.5 h-3.5" />
+                  </button>
+                  <button 
+                    onClick={() => {
+                      const updated = course.topics.filter((_, i) => i !== tIdx);
+                      setCourse({...course, topics: updated});
+                    }} 
+                    className="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all"
+                  >
+                    <Trash2 className="w-3.5 h-3.5" />
                   </button>
                 </div>
+              </div>
 
-                {topic.assessment.map((q, qIdx) => (
-                  <div key={qIdx} className="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-3">
+              <div className="p-8 space-y-6">
+                {/* Content Inputs */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-1.5">
+                    <label className="text-[9px] font-bold text-slate-400 uppercase ml-1">Title (EN)</label>
                     <input 
-                      placeholder="Question Text (EN)"
-                      className="w-full bg-white border border-slate-200 rounded-lg px-3 py-1.5 text-[11px] outline-none"
-                      value={q.question.en}
+                      placeholder="e.g. Introduction to Canvas"
+                      className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-xs focus:ring-2 focus:ring-blue-500/20 outline-none"
+                      value={topic.title.en}
                       onChange={e => {
                         const updated = [...course.topics];
-                        updated[tIdx].assessment[qIdx].question.en = e.target.value;
+                        updated[tIdx].title.en = e.target.value;
                         setCourse({...course, topics: updated});
                       }}
                     />
-                    <div className="grid grid-cols-2 gap-2">
-                      {q.options.map((opt, oIdx) => (
+                  </div>
+                  <div className="space-y-1.5">
+                    <label className="text-[9px] font-bold text-slate-400 uppercase ml-1">Title (RW)</label>
+                    <input 
+                      placeholder="Intangiriro..."
+                      className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-xs focus:ring-2 focus:ring-blue-500/20 outline-none"
+                      value={topic.title.rw}
+                      onChange={e => {
+                        const updated = [...course.topics];
+                        updated[tIdx].title.rw = e.target.value;
+                        setCourse({...course, topics: updated});
+                      }}
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-1.5">
+                  <label className="text-[9px] font-bold text-slate-400 uppercase ml-1">Study Material (EN)</label>
+                  <textarea 
+                    placeholder="Enter lesson content here..."
+                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-xs outline-none min-h-[120px] focus:ring-2 focus:ring-blue-500/20"
+                    value={topic.notes.en}
+                    onChange={e => {
+                      const updated = [...course.topics];
+                      updated[tIdx].notes.en = e.target.value;
+                      setCourse({...course, topics: updated});
+                    }}
+                  />
+                </div>
+
+                {/* Assessment Area - Like Google Forms */}
+                <div className="space-y-4 pt-6 border-t border-slate-100">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <HelpCircle className="w-4 h-4 text-emerald-600" />
+                      <h3 className="text-xs font-black text-blue-950 uppercase tracking-tight">Slide Quiz</h3>
+                    </div>
+                    <button 
+                      onClick={() => addQuestion(tIdx)}
+                      className="flex items-center gap-1 px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-[10px] font-bold hover:bg-emerald-100"
+                    >
+                      <Plus className="w-3 h-3" />
+                      ADD QUESTION
+                    </button>
+                  </div>
+
+                  {topic.assessment.length === 0 && (
+                    <p className="text-[10px] text-slate-400 italic text-center py-2">No quiz questions for this slide.</p>
+                  )}
+
+                  <div className="space-y-4">
+                    {topic.assessment.map((q, qIdx) => (
+                      <div key={qIdx} className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4">
+                        <div className="flex items-center justify-between">
+                          <span className="text-[9px] font-bold text-slate-400 uppercase">Question {qIdx + 1}</span>
+                          <button 
+                            onClick={() => {
+                              const updated = [...course.topics];
+                              updated[tIdx].assessment = updated[tIdx].assessment.filter((_, i) => i !== qIdx);
+                              setCourse({...course, topics: updated});
+                            }}
+                            className="text-red-400 hover:text-red-600"
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                        
                         <input 
-                          key={oIdx}
-                          placeholder={`Option ${oIdx + 1}`}
-                          className={`bg-white border rounded-lg px-3 py-1.5 text-[10px] outline-none ${q.correctIndex === oIdx ? 'border-emerald-500 ring-1 ring-emerald-500/20' : 'border-slate-200'}`}
-                          value={opt.en}
+                          placeholder="What is your question?"
+                          className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-xs outline-none focus:ring-2 focus:ring-emerald-500/20"
+                          value={q.question.en}
                           onChange={e => {
                             const updated = [...course.topics];
-                            updated[tIdx].assessment[qIdx].options[oIdx].en = e.target.value;
-                            setCourse({...course, topics: updated});
-                          }}
-                          onFocus={() => {
-                            const updated = [...course.topics];
-                            updated[tIdx].assessment[qIdx].correctIndex = oIdx;
+                            updated[tIdx].assessment[qIdx].question.en = e.target.value;
                             setCourse({...course, topics: updated});
                           }}
                         />
-                      ))}
-                    </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          {q.options.map((opt, oIdx) => (
+                            <div key={oIdx} className="flex items-center gap-2 group/opt">
+                              <button 
+                                onClick={() => {
+                                  const updated = [...course.topics];
+                                  updated[tIdx].assessment[qIdx].correctIndex = oIdx;
+                                  setCourse({...course, topics: updated});
+                                }}
+                                className={`w-4 h-4 rounded-full border-2 flex items-center justify-center transition-all ${q.correctIndex === oIdx ? 'bg-emerald-500 border-emerald-500' : 'border-slate-300'}`}
+                              >
+                                {q.correctIndex === oIdx && <div className="w-1.5 h-1.5 bg-white rounded-full" />}
+                              </button>
+                              <input 
+                                placeholder={`Option ${oIdx + 1}`}
+                                className={`flex-1 bg-white border rounded-xl px-3 py-2 text-[11px] outline-none transition-all ${q.correctIndex === oIdx ? 'border-emerald-500 ring-2 ring-emerald-500/10' : 'border-slate-200'}`}
+                                value={opt.en}
+                                onChange={e => {
+                                  const updated = [...course.topics];
+                                  updated[tIdx].assessment[qIdx].options[oIdx].en = e.target.value;
+                                  setCourse({...course, topics: updated});
+                                }}
+                              />
+                            </div>
+                          ))}
+                        </div>
+                        <p className="text-[9px] text-slate-400 font-medium">Select the bubble next to the correct answer.</p>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
 };
+

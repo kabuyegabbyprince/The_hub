@@ -66,6 +66,57 @@ app.post('/api/ai/tutor', async (req, res) => {
   }
 });
 
+// AI Course Generator endpoint
+app.post('/api/ai/generate-course', async (req, res) => {
+  try {
+    const { topic, category } = req.body;
+    if (!ai) {
+      return res.json({
+        success: true,
+        course: {
+          title_en: `${topic} Masterclass`,
+          description: `Comprehensive guide to ${topic} for ${category} professionals.`,
+          topics: [
+            { id: '1', title: { en: 'Introduction', rw: 'Intangiriro' }, notes: { en: 'Content coming soon.', rw: 'Ibirimo biraza vuba.' }, assessment: [] },
+            { id: '2', title: { en: 'Practical Application', rw: 'Ibikoresho bifatika' }, notes: { en: 'Hands-on guide.', rw: 'Inzira yimikorere.' }, assessment: [] }
+          ]
+        },
+        mode: 'fallback'
+      });
+    }
+
+    const response = await ai.models.generateContent({
+      model: 'gemini-flash-latest',
+      config: {
+        responseMimeType: 'application/json',
+      },
+      contents: [
+        {
+          role: 'user',
+          parts: [
+            { text: `Generate a structured course for the topic "${topic}" in the category "${category}". 
+              Return a JSON object with:
+              - title_en (string)
+              - description (string)
+              - topics (array of objects with: id (unique string), title (object with en, rw), notes (object with en, rw), assessment (array of 2 questions with type, question (en, rw), options (4 objects with en, rw), and correctIndex (0-3)))
+              Keep Kinyarwanda translations (rw) natural and professional.` }
+          ]
+        }
+      ]
+    });
+
+    const courseData = JSON.parse(response.text || '{}');
+    return res.json({
+      success: true,
+      course: courseData,
+      mode: 'live'
+    });
+  } catch (error: any) {
+    console.error('Error in /api/ai/generate-course:', error);
+    return res.status(500).json({ success: false, error: error.message });
+  }
+});
+
 // Express API routes for The Hub
 app.use('/api', apiRoutes);
 
