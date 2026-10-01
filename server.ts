@@ -17,9 +17,16 @@ app.use(express.json());
 
 // Initialize Gemini SDK if key provided
 const apiKey = process.env.GEMINI_API_KEY || '';
-const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
+const ai = apiKey ? new GoogleGenAI({ 
+  apiKey,
+  httpOptions: {
+    headers: {
+      'User-Agent': 'aistudio-build',
+    }
+  }
+}) : null;
 
-// AI Learning Assistant endpoint (server-side Gemini 2.5)
+// AI Learning Assistant endpoint (server-side Gemini)
 app.post('/api/ai/tutor', async (req, res) => {
   try {
     const { question, contextCourse, learnerLevel } = req.body;
@@ -34,7 +41,7 @@ app.post('/api/ai/tutor', async (req, res) => {
     const systemInstruction = `You are a supportive, expert AI learning coach for "The Hub — Data-Informed Skills & Learning Platform" in Rwanda. You help learners understand practical concepts, guide them through learning pathways, and connect skills to real workplace requirements. Keep answers clear, constructive, and actionable.`;
 
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-flash-latest',
       contents: [
         {
           role: 'user',
@@ -61,6 +68,23 @@ app.post('/api/ai/tutor', async (req, res) => {
 
 // Express API routes for The Hub
 app.use('/api', apiRoutes);
+
+// Global Supabase/Database error handler fallback
+app.use((err: any, req: any, res: any, next: any) => {
+  if (err.message?.includes('Supabase') || err.message?.includes('PostgreSQL') || err.code?.startsWith('PGRST')) {
+    console.warn('[AI Studio] Database offline or error — returning mock fallback');
+    if (req.method === 'GET') {
+      const isCollection = req.path.endsWith('s') || req.path.endsWith('s/');
+      return res.json({
+        success: true,
+        [isCollection ? 'courses' : 'data']: isCollection ? [] : {},
+        message: 'Operating in offline fallback mode'
+      });
+    }
+    return res.status(503).json({ error: 'Service temporarily unavailable (database offline)' });
+  }
+  next(err);
+});
 
 // Development: Vite middleware mode
 if (process.env.NODE_ENV !== 'production') {
