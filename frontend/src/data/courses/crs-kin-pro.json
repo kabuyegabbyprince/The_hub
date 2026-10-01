@@ -1,0 +1,81 @@
+{
+  "id": "crs-kin-pro",
+  "title": {
+    "en": "Kinyarwanda for Professional Exchange",
+    "rw": "Ikinyarwanda mu guhanahana ubumenyi"
+  },
+  "topics": [
+    {
+      "id": "topic-1",
+      "title": {
+        "en": "Greetings and Introductions",
+        "rw": "Indamukanyo n'Ukwivuga"
+      },
+      "notes": {
+        "en": "In a professional setting in Rwanda, greetings are very important. Always start with a polite greeting. 'Muraho' is a general greeting. 'Mwaramutse' is used in the morning, and 'Mwiriwe' is used in the afternoon/evening.",
+        "rw": "Mu rwego rw'akazi mu Rwanda, indamukanyo ni ingenzi cyane. Buri gihe tangira usuhuza neza. 'Muraho' niyo ndamukanyo rusange. 'Mwaramutse' ikoreshwa mu gitondo, naho 'Mwiriwe' ikoreshwa nyuma ya saa sita cyangwa nimugoroba."
+      },
+      "assessment": [
+        { "type": "mcq", "question": { "en": "Which greeting is appropriate for use in the morning?", "rw": "Ni iyihe ndamukanyo ikwiye gukoreshwa mu gitondo?" }, "options": [{ "en": "Mwiriwe", "rw": "Mwiriwe" }, { "en": "Mwaramutse", "rw": "Mwaramutse" }, { "en": "Muraho", "rw": "Muraho" }, { "en": "Bwakeye", "rw": "Bwakeye" }], "correctIndex": 1 },
+        { "type": "tf", "question": { "en": "'Muraho' can be used at any time of day.", "rw": "'Muraho' ishobora gukoreshwa igihe icyo ari cyo cyose cy'umunsi." }, "correctAnswer": true },
+        { "type": "mcq", "question": { "en": "How do you say 'Thank you very much' in Kinyarwanda?", "rw": "Ni gute wavuga 'Urakoze cyane' mu Kinyarwanda?" }, "options": [{ "en": "Murakoze cyane", "rw": "Murakoze cyane" }, { "en": "Ndashaka kwiga", "rw": "Ndashaka kwiga" }, { "en": "Amakuru ni meza", "rw": "Amakuru ni meza" }, { "en": "Ni byiza", "rw": "Ni byiza" }], "correctIndex": 0 },
+        { "type": "matching", "question": { "en": "Match the greeting to the time:", "rw": "Huza indamukanyo n'igihe gikwiye:" }, "pairs": [
+          { "left": { "en": "Mwaramutse", "rw": "Mwaramutse" }, "right": { "en": "Morning", "rw": "Igitondo" } },
+          { "left": { "en": "Mwiriwe", "rw": "Mwiriwe" }, "right": { "en": "Afternoon", "rw": "Nyuma ya saa sita" } },
+          { "left": { "en": "Muramuke", "rw": "Muramuke" }, "right": { "en": "Good night", "rw": "Ijoro ryiza" } }
+        ]},
+        { "type": "mcq", "question": { "en": "What is the standard response to 'Amakuru?'", "rw": "Igisubizo gisanzwe ku 'Amakuru?' ni ikihe?" }, "options": [{ "en": "Meza", "rw": "Meza" }, { "en": "Ni meza", "rw": "Ni meza" }, { "en": "Muraho", "rw": "Muraho" }, { "en": "Yego", "rw": "Yego" }], "correctIndex": 1 },
+        { "type": "tf", "question": { "en": "'Amakuru' literally means 'The news'.", "rw": "'Amakuru' bisobanura amakuru (news)." }, "correctAnswer": true }
+      ]
+    },
+    {
+      "id": "topic-2",
+      "title": {
+        "en": "Workplace Communication",
+        "rw": "Itumanaho mu Kazi"
+      },
+      "notes": {
+        "en": "Effective workplace communication involves using professional language. When asking for something, use 'Ndashaka...' or more politely 'Nagombaga...'. When finishing a task, say 'Naranyuzwe' or 'Birarangiye'. Polite requests often include 'Nyamuneka'.",
+        "rw": "Itumanaho ryiza mu kazi rishingiye ku gukoresha ururimi rwa kinyamwuga. Iyo ushaka ikintu, koresha 'Ndashaka...' cyangwa mu buryo bw'ikinyabupfura 'Nagombaga...'. Iyo urangije umurimo, vuga 'Naranyuzwe' cyangwa 'Birarangiye'. Iyo usaba ikintu neza ukoresha 'Nyamuneka'."
+      },
+      "assessment": [
+        { "type": "mcq", "question": { "en": "How do you politely say 'Please'?", "rw": "Ni gute wavuga 'Nyamuneka' mu buryo bw'ikinyabupfura?" }, "options": [{ "en": "Nyamuneka", "rw": "Nyamuneka" }, { "en": "Bikore", "rw": "Bikore" }, { "en": "Vuba", "rw": "Vuba" }, { "en": "Urakoze", "rw": "Urakoze" }], "correctIndex": 0 },
+        { "type": "tf", "question": { "en": "'Birarangiye' means 'It is finished'.", "rw": "'Birarangiye' bisobanura ko umurimo urangiye." }, "correctAnswer": true },
+        { "type": "mcq", "question": { "en": "What is the word for 'Office'?", "rw": "Ijambo risobanura 'Ibiro' (office) ni irihe?" }, "options": [{ "en": "Ibiro", "rw": "Ibiro" }, { "en": "Ishuri", "rw": "Ishuri" }, { "en": "Isoko", "rw": "Isoko" }, { "en": "Uruganda", "rw": "Uruganda" }], "correctIndex": 0 },
+        { "type": "matching", "question": { "en": "Match professional terms:", "rw": "Huza amagambo ya kinyamwuga:" }, "pairs": [
+          { "left": { "en": "Umuyobozi", "rw": "Umuyobozi" }, "right": { "en": "Leader/Boss", "rw": "Umuyobozi" } },
+          { "left": { "en": "Umukozi", "rw": "Umukozi" }, "right": { "en": "Employee", "rw": "Umukozi" } },
+          { "left": { "en": "Inama", "rw": "Inama" }, "right": { "en": "Meeting", "rw": "Inama" } }
+        ]},
+        { "type": "mcq", "question": { "en": "How do you say 'Good work'?", "rw": "Ni gute wabwira umuntu uti 'Akazi keza'?" }, "options": [{ "en": "Akazi keza", "rw": "Akazi keza" }, { "en": "Urakoze", "rw": "Urakoze" }, { "en": "Muraho", "rw": "Muraho" }, { "en": "Hobe", "rw": "Hobe" }], "correctIndex": 0 },
+        { "type": "tf", "question": { "en": "In Rwanda, it's common to address bosses as 'Bwana' or 'Madamu'.", "rw": "Mu Rwanda, birasanzwe kwita abayobozi 'Bwana' cyangwa 'Madamu'." }, "correctAnswer": true }
+      ]
+    }
+  ],
+  "finalAssessment": [
+    { "type": "tf", "question": { "en": "Kinyarwanda is the national language of Rwanda.", "rw": "Ikinyarwanda ni ururimi rw'igihugu mu Rwanda." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "How do you say 'Excuse me' or 'Sorry'?", "rw": "Ni gute wavuga 'Mbabarira'?" }, "options": [{ "en": "Ndashaka", "rw": "Ndashaka" }, { "en": "Mbabarira", "rw": "Mbabarira" }, { "en": "Hobe", "rw": "Hobe" }, { "en": "Bikore", "rw": "Bikore" }], "correctIndex": 1 },
+    { "type": "tf", "question": { "en": "'Amahoro' means peace.", "rw": "'Amahoro' bisobanura amahoro (peace)." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "What is the word for 'Teacher'?", "rw": "Ijambo risobanura 'Umwarimu' ni irihe?" }, "options": [{ "en": "Umwigishwa", "rw": "Umwigishwa" }, { "en": "Umwarimu", "rw": "Umwarimu" }, { "en": "Umuyobozi", "rw": "Umuyobozi" }, { "en": "Umukozi", "rw": "Umuyobozi" }], "correctIndex": 1 },
+    { "type": "tf", "question": { "en": "In Rwanda, it's polite to use both hands when receiving a gift.", "rw": "Mu Rwanda, ni ikinyabupfura gukoresha amaboko yombi iyo wakira impano." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "How do you say 'I don't understand'?", "rw": "Ni gute wavuga 'Simbyumva'?" }, "options": [{ "en": "Ndabyumva", "rw": "Ndabyumva" }, { "en": "Simbyumva", "rw": "Simbyumva" }, { "en": "Ntabwo nzi", "rw": "Ntabwo nzi" }, { "en": "Muvuge", "rw": "Muvuge" }], "correctIndex": 1 },
+    { "type": "tf", "question": { "en": "'Yego' means No.", "rw": "'Yego' bisobanura Oya." }, "correctAnswer": false },
+    { "type": "mcq", "question": { "en": "What is the word for 'Water'?", "rw": "Ijambo risobanura 'Amazi' ni irihe?" }, "options": [{ "en": "Amata", "rw": "Amata" }, { "en": "Amazi", "rw": "Amazi" }, { "en": "Inzoga", "rw": "Inzoga" }, { "en": "Icyayi", "rw": "Icyayi" }], "correctIndex": 1 },
+    { "type": "matching", "question": { "en": "Match basic words:", "rw": "Huza amagambo y'ibanze:" }, "pairs": [
+      { "left": { "en": "Yego", "rw": "Yego" }, "right": { "en": "Yes", "rw": "Yego" } },
+      { "left": { "en": "Oya", "rw": "Oya" }, "right": { "en": "No", "rw": "Oya" } },
+      { "left": { "en": "Hobe", "rw": "Hobe" }, "right": { "en": "Greeting/Hug", "rw": "Indamukanyo" } }
+    ]},
+    { "type": "mcq", "question": { "en": "How do you say 'Where is...?'", "rw": "Ni gute wavuga '... riri he?'" }, "options": [{ "en": "... ni iki?", "rw": "... ni iki?" }, { "en": "... riri he?", "rw": "... riri he?" }, { "en": "... riri hano", "rw": "... riri hano" }, { "en": "... riraje", "rw": "... riraje" }], "correctIndex": 1 },
+    { "type": "tf", "question": { "en": "'Isakaramentu' is a common Kinyarwanda word.", "rw": "'Isakaramentu' ni ijambo rikoreshwa cyane mu Kinyarwanda." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "What is the word for 'Friend'?", "rw": "Ijambo risobanura 'Inshuti' ni irihe?" }, "options": [{ "en": "Umwanzi", "rw": "Umwanzi" }, { "en": "Inshuti", "rw": "Inshuti" }, { "en": "Umuntu", "rw": "Umuntu" }, { "en": "Umuvandimwe", "rw": "Umuvandimwe" }], "correctIndex": 1 },
+    { "type": "tf", "question": { "en": "'Murakoze' means Thank You.", "rw": "'Murakoze' bisobanura Urakoze." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "How do you say 'How much is it?'", "rw": "Ni gute wavuga 'Ni bangahe?'" }, "options": [{ "en": "Ni bangahe?", "rw": "Ni bangahe?" }, { "en": "Ni iki?", "rw": "Ni iki?" }, { "en": "Ni he?", "rw": "Ni he?" }, { "en": "Ni kuki?", "rw": "Ni kuki?" }], "correctIndex": 0 },
+    { "type": "tf", "question": { "en": "Kigali is the capital of Rwanda.", "rw": "Kigali ni umurwa mukuru w'u Rwanda." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "What is the word for 'School'?", "rw": "Ijambo risobanura 'Ishuri' ni irihe?" }, "options": [{ "en": "Ibitaro", "rw": "Ibitaro" }, { "en": "Ishuri", "rw": "Ishuri" }, { "en": "Isoko", "rw": "Isoko" }, { "en": "Inzu", "rw": "Inzu" }], "correctIndex": 1 },
+    { "type": "tf", "question": { "en": "'Umugabo' means Woman.", "rw": "'Umugabo' bisobanura Umugore." }, "correctAnswer": false },
+    { "type": "mcq", "question": { "en": "How do you say 'Good luck'?", "rw": "Ni gute wavuga 'Amahirwe masa'?" }, "options": [{ "en": "Urashoboye", "rw": "Urashoboye" }, { "en": "Amahirwe masa", "rw": "Amahirwe masa" }, { "en": "Genda neza", "rw": "Genda neza" }, { "en": "Urakoze", "rw": "Urakoze" }], "correctIndex": 1 },
+    { "type": "tf", "question": { "en": "The Rwanda currency is the Franc.", "rw": "Ifaranga ry'u Rwanda ni 'Franc'." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "What is the word for 'Today'?", "rw": "Ijambo risobanura 'Uyu munsi' ni irihe?" }, "options": [{ "en": "Ejo", "rw": "Ejo" }, { "en": "Uyu munsi", "rw": "Uyu munsi" }, { "en": "Ejo hashize", "rw": "Ejo hashize" }, { "en": "Mubumoso", "rw": "Mubumoso" }], "correctIndex": 1 }
+  ]
+}

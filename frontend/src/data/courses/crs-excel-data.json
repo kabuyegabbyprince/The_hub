@@ -1,0 +1,81 @@
+{
+  "id": "crs-excel-data",
+  "title": {
+    "en": "Excel for Cooperative Data",
+    "rw": "Excel ku Makuru y'Amakoperative"
+  },
+  "topics": [
+    {
+      "id": "topic-1",
+      "title": {
+        "en": "Basic Formulas",
+        "rw": "Imiterere y'Imibare y'Ibanze"
+      },
+      "notes": {
+        "en": "Formulas are the bread and butter of Excel. They allow you to perform calculations on your data. Every formula begins with an equals sign (=). For example, =SUM(A1:A10) adds up all the values in cells A1 through A10.",
+        "rw": "Imiterere y'imibare (formulas) ni ingenzi cyane muri Excel. Ikubashisha gukora imibare ku makuru yawe. Buri miterere yose itangirwa n'ikimenyetso cya kunganya (=). Kurugero, =SUM(A1:A10) iteranya agaciro kose kari mu tuzu (cells) kuva kuri A1 kugeza kuri A10."
+      },
+      "assessment": [
+        { "type": "mcq", "question": { "en": "What symbol must every Excel formula begin with?", "rw": "Ni ikihe kimenyetso buri miterere (formula) ya Excel igomba gutangiraho?" }, "options": [{ "en": "+", "rw": "+" }, { "en": "=", "rw": "=" }, { "en": "@", "rw": "@" }, { "en": "!", "rw": "!" }], "correctIndex": 1 },
+        { "type": "tf", "question": { "en": "The SUM function is used to subtract numbers.", "rw": "Function ya SUM ikoreshwa mu gukuramo imibare." }, "correctAnswer": false },
+        { "type": "mcq", "question": { "en": "Which function is used to find the largest value in a range?", "rw": "Ni iyihe 'function' ikoreshwa mu gushaka agaciro kanini mu rutonde?" }, "options": [{ "en": "=MAX()", "rw": "=MAX()" }, { "en": "=LARGE()", "rw": "=LARGE()" }, { "en": "=HIGH()", "rw": "=HIGH()" }, { "en": "=BIG()", "rw": "=BIG()" }], "correctIndex": 0 },
+        { "type": "matching", "question": { "en": "Match the function to its purpose:", "rw": "Huza function n'icyo ikora:" }, "pairs": [
+          { "left": { "en": "SUM", "rw": "SUM" }, "right": { "en": "Addition", "rw": "Guteranya" } },
+          { "left": { "en": "AVERAGE", "rw": "AVERAGE" }, "right": { "en": "Mean", "rw": "Impuzandengo" } },
+          { "left": { "en": "COUNT", "rw": "COUNT" }, "right": { "en": "Number of items", "rw": "Umubare w'ibintu" } }
+        ]},
+        { "type": "mcq", "question": { "en": "How do you add up a column of numbers?", "rw": "Ni gute wateranya inkingi (column) y'imibare?" }, "options": [{ "en": "=TOTAL()", "rw": "=TOTAL()" }, { "en": "=ADD()", "rw": "=ADD()" }, { "en": "=SUM()", "rw": "=SUM()" }, { "en": "=COUNT()", "rw": "=COUNT()" }], "correctIndex": 2 },
+        { "type": "tf", "question": { "en": "Excel files are called Workbooks.", "rw": "Dosiye za Excel zitwa Workbooks." }, "correctAnswer": true }
+      ]
+    },
+    {
+      "id": "topic-2",
+      "title": {
+        "en": "Data Formatting & Visualization",
+        "rw": "Gutunganya Amakuru n'Ishusho ryayo"
+      },
+      "notes": {
+        "en": "Formatting makes your data easier to read and understand. You can change fonts, colors, and borders. Conditional formatting is a powerful tool that changes the appearance of cells based on specific conditions. Charts and graphs help visualize data trends.",
+        "rw": "Gutunganya (formatting) bituma amakuru yawe asomeka kandi akumvikana neza. Ushobora guhindura inyuguti, amabara, n'imipaka (borders). 'Conditional formatting' ni igikoresho gikomeye gihindura uko utuzu (cells) tugaragara bitewe n'imiterere yihariye. Imbonerahamwe (charts/graphs) zifasha kureba uko amakuru ahinduka."
+      },
+      "assessment": [
+        { "type": "mcq", "question": { "en": "Which feature changes cell appearance based on its value?", "rw": "Ni ikihe kintu gihindura uko akazu kagaragara bitewe n'agaciro kakarimo?" }, "options": [{ "en": "Standard Formatting", "rw": "Standard Formatting" }, { "en": "Conditional Formatting", "rw": "Conditional Formatting" }, { "en": "Data Validation", "rw": "Data Validation" }, { "en": "Cell Styles", "rw": "Cell Styles" }], "correctIndex": 1 },
+        { "type": "tf", "question": { "en": "You can add a background color to a cell.", "rw": "Ushobora gushyira ibara ry'inyuma mu kazu." }, "correctAnswer": true },
+        { "type": "mcq", "question": { "en": "What is the shortcut to format a cell as currency?", "rw": "Ni iyihe nzira ngufi (shortcut) yo gushyira akazu mu buryo bw'amafaranga (currency)?" }, "options": [{ "en": "Ctrl + Shift + $", "rw": "Ctrl + Shift + $" }, { "en": "Ctrl + Shift + %", "rw": "Ctrl + Shift + %" }, { "en": "Ctrl + B", "rw": "Ctrl + B" }, { "en": "Ctrl + U", "rw": "Ctrl + U" }], "correctIndex": 0 },
+        { "type": "matching", "question": { "en": "Match chart types to their use:", "rw": "Huza ubwoko bw'imbonerahamwe n'icyo zikora:" }, "pairs": [
+          { "left": { "en": "Pie Chart", "rw": "Pie Chart" }, "right": { "en": "Proportions", "rw": "Ibice" } },
+          { "left": { "en": "Line Chart", "rw": "Line Chart" }, "right": { "en": "Trends over time", "rw": "Uko bihinduka" } },
+          { "left": { "en": "Bar Chart", "rw": "Bar Chart" }, "right": { "en": "Comparisons", "rw": "Kugereranya" } }
+        ]},
+        { "type": "mcq", "question": { "en": "Which tab contains the 'Charts' group?", "rw": "Ni iyihe 'tab' irimo itsinda rya 'Charts'?" }, "options": [{ "en": "Home", "rw": "Home" }, { "en": "Insert", "rw": "Insert" }, { "en": "Page Layout", "rw": "Page Layout" }, { "en": "Data", "rw": "Data" }], "correctIndex": 1 },
+        { "type": "tf", "question": { "en": "A chart updates automatically when the source data changes.", "rw": "Imbonerahamwe yihindura (updates) iyo amakuru yayikoze ahindutse." }, "correctAnswer": true }
+      ]
+    }
+  ],
+  "finalAssessment": [
+    { "type": "tf", "question": { "en": "A cell is the intersection of a row and a column.", "rw": "Akazu (cell) ni aho umurongo n'inkingi bihura." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "Which key is used to start a new line within a cell?", "rw": "Ni iyihe mfunguzo ikoreshwa mu gutangira umurongo mushya mu kazu?" }, "options": [{ "en": "Enter", "rw": "Enter" }, { "en": "Alt + Enter", "rw": "Alt + Enter" }, { "en": "Shift + Enter", "rw": "Shift + Enter" }, { "en": "Ctrl + Enter", "rw": "Ctrl + Enter" }], "correctIndex": 1 },
+    { "type": "tf", "question": { "en": "Excel formulas are case-sensitive.", "rw": "Imiterere ya Excel itandukanya inyuguti nkuru n'into." }, "correctAnswer": false },
+    { "type": "mcq", "question": { "en": "What is the correct way to refer to a range from A1 to B10?", "rw": "Ni iyihe nzira ikwiye yo kwereka urutonde kuva kuri A1 kugeza kuri B10?" }, "options": [{ "en": "A1-B10", "rw": "A1-B10" }, { "en": "A1:B10", "rw": "A1:B10" }, { "en": "A1 to B10", "rw": "A1 to B10" }, { "en": "A1,B10", "rw": "A1,B10" }], "correctIndex": 1 },
+    { "type": "tf", "question": { "en": "The VLOOKUP function searches for a value in the first column of a table.", "rw": "Function ya VLOOKUP ishaka agaciro mu nkingi ya mbere y'imbonerahamwe." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "Which of these is NOT a valid chart type in Excel?", "rw": "Muri ibi, ni ikihe kintu kitari 'chart' muri Excel?" }, "options": [{ "en": "Pie", "rw": "Pie" }, { "en": "Bar", "rw": "Bar" }, { "en": "Scatter", "rw": "Scatter" }, { "en": "Portrait", "rw": "Portrait" }], "correctIndex": 3 },
+    { "type": "tf", "question": { "en": "You can protect an Excel sheet with a password.", "rw": "Wabashisha kurinda urupapuro rwa Excel n'ijambo ry'ibanga (password)." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "What does '#####' in a cell mean?", "rw": "Iyo ubonye '#####' mu kazu bisobanura iki?" }, "options": [{ "en": "Error in formula", "rw": "Imiterere irimo ikosa" }, { "en": "The cell is not wide enough", "rw": "Akazu ni gato cyane" }, { "en": "The data is deleted", "rw": "Amakuru yasibwe" }, { "en": "Wait for processing", "rw": "Tegereza irimo gukora" }], "correctIndex": 1 },
+    { "type": "tf", "question": { "en": "Freeze Panes allows you to keep headers visible while scrolling.", "rw": "Freeze Panes ikubashisha kubona imitwe y'imbonerahamwe mu gihe urimo kumanuka." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "Which function counts cells with any content?", "rw": "Ni iyihe function ibara utuzu (cells) turimo ikintu cyose?" }, "options": [{ "en": "COUNT", "rw": "COUNT" }, { "en": "COUNTA", "rw": "COUNTA" }, { "en": "COUNTIF", "rw": "COUNTIF" }, { "en": "SUM", "rw": "SUM" }], "correctIndex": 1 },
+    { "type": "tf", "question": { "en": "Absolute references use the '$' sign.", "rw": "Absolute references zikoresha ikimenyetso cya '$'." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "What is the shortcut to save a workbook?", "rw": "Ni iyihe nzira ngufi (shortcut) yo kubika workbook?" }, "options": [{ "en": "Ctrl + S", "rw": "Ctrl + S" }, { "en": "Ctrl + C", "rw": "Ctrl + C" }, { "en": "Ctrl + V", "rw": "Ctrl + V" }, { "en": "Ctrl + P", "rw": "Ctrl + P" }], "correctIndex": 0 },
+    { "type": "tf", "question": { "en": "Excel can sort data alphabetically.", "rw": "Excel yabashisha gutunganya amakuru ikurikije inyuguti (alphabetically)." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "Which tab contains the 'Filter' option?", "rw": "Ni iyihe 'tab' irimo 'Filter'?" }, "options": [{ "en": "Home", "rw": "Home" }, { "en": "Insert", "rw": "Insert" }, { "en": "Data", "rw": "Data" }, { "en": "View", "rw": "View" }], "correctIndex": 2 },
+    { "type": "tf", "question": { "en": "Macros can automate repetitive tasks.", "rw": "Macros zishobora gukora imirimo isubirwamo mu buryo bwikora." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "How do you select an entire column?", "rw": "Ni gute wahitamo inkingi (column) yose?" }, "options": [{ "en": "Click the row number", "rw": "Kanda ku mubare w'umurongo" }, { "en": "Click the column letter", "rw": "Kanda ku rwandiko rw'inkingi" }, { "en": "Ctrl + A", "rw": "Ctrl + A" }, { "en": "Shift + Space", "rw": "Shift + Space" }], "correctIndex": 1 },
+    { "type": "matching", "question": { "en": "Match shortcuts:", "rw": "Huza inzira ngufi (shortcuts):" }, "pairs": [
+      { "left": { "en": "Copy", "rw": "Gukopera" }, "right": { "en": "Ctrl + C", "rw": "Ctrl + C" } },
+      { "left": { "en": "Paste", "rw": "Komeka" }, "right": { "en": "Ctrl + V", "rw": "Ctrl + V" } },
+      { "left": { "en": "Undo", "rw": "Gusubira inyuma" }, "right": { "en": "Ctrl + Z", "rw": "Ctrl + Z" } }
+    ]},
+    { "type": "mcq", "question": { "en": "Which error means 'division by zero'?", "rw": "Ni irihe kosa rivuga ko wagabanyije na zeru?" }, "options": [{ "en": "#N/A", "rw": "#N/A" }, { "en": "#DIV/0!", "rw": "#DIV/0!" }, { "en": "#VALUE!", "rw": "#VALUE!" }, { "en": "#REF!", "rw": "#REF!" }], "correctIndex": 1 },
+    { "type": "tf", "question": { "en": "Conditional Formatting changes a cell's appearance based on its value.", "rw": "Conditional Formatting ihindura uko akazu kagaragara ikurikije agaciro kakarimo." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "What is the maximum number of rows in a single sheet (modern Excel)?", "rw": "Umubare ntarengwa w'imirongo mu rupapuro rumwe (Excel nshya) ni uwuhe?" }, "options": [{ "en": "65,536", "rw": "65,536" }, { "en": "1,048,576", "rw": "1,048,576" }, { "en": "500,000", "rw": "500,000" }, { "en": "Unlimited", "rw": "Nta mupaka" }], "correctIndex": 1 }
+  ]
+}

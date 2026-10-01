@@ -1,0 +1,81 @@
+{
+  "id": "crs-dig-lit",
+  "title": {
+    "en": "Introduction to Digital Literacy",
+    "rw": "Intangiriro y'Ubumenyi mu by'Ikoranabuhanga"
+  },
+  "topics": [
+    {
+      "id": "topic-1",
+      "title": {
+        "en": "Basic Computer Hardware",
+        "rw": "Ibice by'Ibanze by'Imashini"
+      },
+      "notes": {
+        "en": "Computer hardware includes the physical parts of a computer. This includes the Monitor, Keyboard, Mouse, and the System Unit (where the brain of the computer is). For mobile devices, the hardware includes the screen, battery, and internal chips.",
+        "rw": "Ibice by'imashini (hardware) bikubiyemo ibice bifatika byayo. Ibi bikubiyemo 'Monitor' (aho urebera), 'Keyboard' (aho wandikira), 'Mouse', n'agasanduku k'imashini (ari naho hari ubwonko bwayo). Ku bikoresho ngendanwa, hardware ikubiyemo ecran (screen), batiri, n'ibindi bice by'imbere."
+      },
+      "assessment": [
+        { "type": "mcq", "question": { "en": "Which of these is an input device?", "rw": "Muri ibi, ni ikihe gikoresho cyinjiza amakuru (input device)?" }, "options": [ { "en": "Monitor", "rw": "Monitor" }, { "en": "Printer", "rw": "Printer" }, { "en": "Keyboard", "rw": "Keyboard" }, { "en": "Speaker", "rw": "Speaker" } ], "correctIndex": 2 },
+        { "type": "mcq", "question": { "en": "What is the 'brain' of the computer called?", "rw": "'Ubwonko' bw'imashini bwitwa iki?" }, "options": [ { "en": "RAM", "rw": "RAM" }, { "en": "Hard Drive", "rw": "Hard Drive" }, { "en": "CPU", "rw": "CPU" }, { "en": "Monitor", "rw": "Monitor" } ], "correctIndex": 2 },
+        { "type": "mcq", "question": { "en": "Which device is used to see what the computer is doing?", "rw": "Ni ikihe gikoresho kikubashisha kubona ibyo imashini irimo gukora?" }, "options": [ { "en": "Mouse", "rw": "Mouse" }, { "en": "Monitor", "rw": "Monitor" }, { "en": "Keyboard", "rw": "Keyboard" }, { "en": "Microphone", "rw": "Microphone" } ], "correctIndex": 1 },
+        { "type": "matching", "question": { "en": "Match hardware to its function:", "rw": "Huza ibice n'icyo bikora:" }, "pairs": [
+          { "left": { "en": "Monitor", "rw": "Monitor" }, "right": { "en": "Visual display", "rw": "Kwerekana" } },
+          { "left": { "en": "Keyboard", "rw": "Keyboard" }, "right": { "en": "Typing", "rw": "Kwandika" } },
+          { "left": { "en": "Mouse", "rw": "Mouse" }, "right": { "en": "Pointing", "rw": "Kwereka" } }
+        ]},
+        { "type": "mcq", "question": { "en": "What does USB stand for?", "rw": "USB isobanura iki?" }, "options": [ { "en": "Universal Serial Bus", "rw": "Universal Serial Bus" }, { "en": "United Service Board", "rw": "United Service Board" }, { "en": "Under System Backup", "rw": "Under System Backup" }, { "en": "Ultra Small Battery", "rw": "Ultra Small Battery" } ], "correctIndex": 0 },
+        { "type": "tf", "question": { "en": "A smartphone is a type of computer.", "rw": "Telefone igezweho (smartphone) ni ubwoko bw'imashini." }, "correctAnswer": true }
+      ]
+    },
+    {
+      "id": "topic-2",
+      "title": {
+        "en": "Operating Systems & Files",
+        "rw": "Operating Systems na Dosiye"
+      },
+      "notes": {
+        "en": "The Operating System (OS) is the software that manages all other software and hardware. Examples include Windows, macOS, Android, and iOS. Files are used to store data, and folders are used to organize files.",
+        "rw": "Operating System (OS) ni porogaramu igenzura izindi porogaramu zose n'ibice by'imashini. Ingero ni Windows, macOS, Android, na iOS. Dosiye (files) zikoreshwa mu kubika amakuru, naho amadosiye (folders) akoreshwa mu gutunganya izo dosiye."
+      },
+      "assessment": [
+        { "type": "mcq", "question": { "en": "Which of these is an Operating System?", "rw": "Muri ibi, ni iyihe 'Operating System'?" }, "options": [{ "en": "Windows", "rw": "Windows" }, { "en": "Google Chrome", "rw": "Google Chrome" }, { "en": "Microsoft Word", "rw": "Microsoft Word" }, { "en": "Facebook", "rw": "Facebook" }], "correctIndex": 0 },
+        { "type": "tf", "question": { "en": "You can have multiple files with the same name in the same folder.", "rw": "Ushobora kugira dosiye nyinshi zifite izina rimwe mu idosiye (folder) imwe." }, "correctAnswer": false },
+        { "type": "mcq", "question": { "en": "What is the common file extension for an image?", "rw": "Ni iyihe 'extension' isanzwe ku ifoto?" }, "options": [{ "en": ".docx", "rw": ".docx" }, { "en": ".jpg", "rw": ".jpg" }, { "en": ".mp3", "rw": ".mp3" }, { "en": ".xlsx", "rw": ".xlsx" }], "correctIndex": 1 },
+        { "type": "matching", "question": { "en": "Match file types to their content:", "rw": "Huza ubwoko bwa dosiye n'ibiba birimo:" }, "pairs": [
+          { "left": { "en": ".txt", "rw": ".txt" }, "right": { "en": "Simple text", "rw": "Inyandiko isanzwe" } },
+          { "left": { "en": ".pdf", "rw": ".pdf" }, "right": { "en": "Document", "rw": "Inyandiko idahinduka" } },
+          { "left": { "en": ".zip", "rw": ".zip" }, "right": { "en": "Compressed file", "rw": "Dosiye yagabanijwe" } }
+        ]},
+        { "type": "mcq", "question": { "en": "Which action removes a file forever from the computer?", "rw": "Ni ikihe gikorwa gisiba dosiye burundu mu imashini?" }, "options": [{ "en": "Delete", "rw": "Delete" }, { "en": "Move to Recycle Bin", "rw": "Move to Recycle Bin" }, { "en": "Empty Recycle Bin", "rw": "Empty Recycle Bin" }, { "en": "Rename", "rw": "Rename" }], "correctIndex": 2 },
+        { "type": "tf", "question": { "en": "Android is an operating system for mobile devices.", "rw": "Android ni operating system y'ibikoresho ngendanwa." }, "correctAnswer": true }
+      ]
+    }
+  ],
+  "finalAssessment": [
+    { "type": "tf", "question": { "en": "Hardware can work without software.", "rw": "Hardware ishobora gukora nta software (porogaramu) ihari." }, "correctAnswer": false },
+    { "type": "mcq", "question": { "en": "Which of these is a web browser?", "rw": "Muri ibi, ni iyihe 'web browser'?" }, "options": [{ "en": "Windows", "rw": "Windows" }, { "en": "Google Chrome", "rw": "Google Chrome" }, { "en": "CPU", "rw": "CPU" }, { "en": "Microsoft Excel", "rw": "Microsoft Excel" }], "correctIndex": 1 },
+    { "type": "tf", "question": { "en": "The internet is a global network of computers.", "rw": "Interineti ni urusobe rw'imashini ku isi yose." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "What is the primary function of a keyboard?", "rw": "Umurimo w'ibanze wa keyboard ni uwuhe?" }, "options": [{ "en": "Typing", "rw": "Kwandika" }, { "en": "Printing", "rw": "Gucapa" }, { "en": "Scanning", "rw": "Gucisha ku cyuma" }, { "en": "Listening", "rw": "Kumva" }], "correctIndex": 0 },
+    { "type": "tf", "question": { "en": "Cloud storage allows you to save files on the internet.", "rw": "Cloud storage ikubashisha kubika dosiye kuri interineti." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "Which key is usually used to refresh a web page?", "rw": "Ni iyihe mfunguzo ikunze gukoreshwa mu kuvugurura (refresh) urubuga?" }, "options": [{ "en": "F1", "rw": "F1" }, { "en": "F5", "rw": "F5" }, { "en": "F10", "rw": "F10" }, { "en": "Esc", "rw": "Esc" }], "correctIndex": 1 },
+    { "type": "tf", "question": { "en": "A password should be easy for others to guess.", "rw": "Ijambo ry'ibanga (password) rigomba kuba ryoroshye ku bandi kurimenya." }, "correctAnswer": false },
+    { "type": "mcq", "question": { "en": "What does WWW stand for?", "rw": "WWW isobanura iki?" }, "options": [{ "en": "World Wide Web", "rw": "World Wide Web" }, { "en": "World West Web", "rw": "World West Web" }, { "en": "Wide World Word", "rw": "Wide World Word" }, { "en": "Web World Wide", "rw": "Web World Wide" }], "correctIndex": 0 },
+    { "type": "tf", "question": { "en": "Wi-Fi is a technology for wireless networking.", "rw": "Wi-Fi ni ikoranabuhanga ryo guhuza imashini hatakoreshejwe imigozi." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "Which device is needed to connect a computer to the internet?", "rw": "Ni ikihe gikoresho gikenewe mu guhuza imashini na interineti?" }, "options": [{ "en": "Printer", "rw": "Printer" }, { "en": "Modem/Router", "rw": "Modem/Router" }, { "en": "Speaker", "rw": "Speaker" }, { "en": "Scanner", "rw": "Scanner" }], "correctIndex": 1 },
+    { "type": "tf", "question": { "en": "Email stands for Electronic Mail.", "rw": "Email isobanura Electronic Mail." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "What is the shortcut to copy text?", "rw": "Ni iyihe nzira ngufi yo gukopera (copy) inyandiko?" }, "options": [{ "en": "Ctrl + X", "rw": "Ctrl + X" }, { "en": "Ctrl + V", "rw": "Ctrl + V" }, { "en": "Ctrl + C", "rw": "Ctrl + C" }, { "en": "Ctrl + Z", "rw": "Ctrl + Z" }], "correctIndex": 2 },
+    { "type": "tf", "question": { "en": "Malware is software intended to damage a computer.", "rw": "Malware ni porogaramu igamije kwangiza imashini." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "Which of these is social media?", "rw": "Muri ibi, ni iyihe mbuga nkoranyambaga (social media)?" }, "options": [{ "en": "Excel", "rw": "Excel" }, { "en": "Facebook", "rw": "Facebook" }, { "en": "Word", "rw": "Word" }, { "en": "Calculator", "rw": "Calculator" }], "correctIndex": 1 },
+    { "type": "matching", "question": { "en": "Match terms to their meaning:", "rw": "Huza amagambo n'icyo bisobanura:" }, "pairs": [
+      { "left": { "en": "Download", "rw": "Download" }, "right": { "en": "Receive from internet", "rw": "Kuvana kuri interineti" } },
+      { "left": { "en": "Upload", "rw": "Upload" }, "right": { "en": "Send to internet", "rw": "Gushyira kuri interineti" } },
+      { "left": { "en": "Link", "rw": "Link" }, "right": { "en": "Hypertext reference", "rw": "Ihuza" } }
+    ]},
+    { "type": "mcq", "question": { "en": "Which part of the computer stores data permanently?", "rw": "Ni ikihe gice cy'imashini kibika amakuru burundu?" }, "options": [{ "en": "RAM", "rw": "RAM" }, { "en": "Hard Drive", "rw": "Hard Drive" }, { "en": "CPU", "rw": "CPU" }, { "en": "Power Supply", "rw": "Power Supply" }], "correctIndex": 1 },
+    { "type": "tf", "question": { "en": "Computers can understand human language directly.", "rw": "Imashini zishobora kumva ururimi rw'abantu ako kanya." }, "correctAnswer": false },
+    { "type": "mcq", "question": { "en": "What is the shortcut to paste text?", "rw": "Ni iyihe nzira ngufi yo komeka (paste) inyandiko?" }, "options": [{ "en": "Ctrl + C", "rw": "Ctrl + C" }, { "en": "Ctrl + V", "rw": "Ctrl + V" }, { "en": "Ctrl + P", "rw": "Ctrl + P" }, { "en": "Ctrl + S", "rw": "Ctrl + S" }], "correctIndex": 1 },
+    { "type": "tf", "question": { "en": "The '@' symbol is used in every email address.", "rw": "Ikimenyetso cya '@' gikoreshwa muri buri aderesi ya email." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "Which of these is an output device?", "rw": "Muri ibi, ni ikihe gikoresho gisohora amakuru (output device)?" }, "options": [{ "en": "Mouse", "rw": "Mouse" }, { "en": "Keyboard", "rw": "Keyboard" }, { "en": "Printer", "rw": "Printer" }, { "en": "Microphone", "rw": "Microphone" }], "correctIndex": 2 }
+  ]
+}

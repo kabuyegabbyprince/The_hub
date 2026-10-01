@@ -1,0 +1,8 @@
+{
+  "name": "The Hub",
+  "description": "Data-informed skills development and learning platform powered by official Rwanda NISR labour market insights, course pathways, and Skill Passport verification.",
+  "request_frame_options": "ALLOWALL",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "id": "crs-web-fund",
+  "title": {
+    "en": "HTML, CSS & Modern Web Design",
+    "rw": "HTML, CSS n'Ishushanya ry'Imbuga za none"
+  },
+  "topics": [
+    {
+      "id": "topic-1",
+      "title": {
+        "en": "Introduction to HTML",
+        "rw": "Intangiriro ya HTML"
+      },
+      "notes": {
+        "en": "HTML stands for HyperText Markup Language. It is the standard markup language for creating web pages. HTML describes the structure of a Web page. HTML consists of a series of elements. Elements tell the browser how to display the content.",
+        "rw": "HTML isobanura 'HyperText Markup Language'. Ni rurimi rusanzwe rukoreshwa mu kurema imbuga za interineti. HTML isobanura imiterere y'urubuga. HTML igizwe n'uruhererekane ry'ibintu (elements). Ibi bintu bibwira mushakisha (browser) uko ikwiye kwerekana ibikubiyemo."
+      },
+      "assessment": [
+        {
+          "type": "mcq",
+          "question": { "en": "What does HTML stand for?", "rw": "HTML isobanura iki?" },
+          "options": [
+            { "en": "HyperText Markup Language", "rw": "HyperText Markup Language" },
+            { "en": "HighTech Modern Language", "rw": "HighTech Modern Language" },
+            { "en": "Hyperlink and Text Management", "rw": "Hyperlink and Text Management" },
+            { "en": "Home Tool Markup Language", "rw": "Home Tool Markup Language" }
+          ],
+          "correctIndex": 0
+        },
+        {
+          "type": "tf",
+          "question": { "en": "HTML is a programming language.", "rw": "HTML ni ururimi rwa porogaramu (programming language)." },
+          "correctAnswer": false
+        },
+        {
+          "type": "mcq",
+          "question": { "en": "Which element is used for the largest heading?", "rw": "Ni ikihe kintu gikoreshwa ku mutwe w'inyandiko munini kurusha iyindi?" },
+          "options": [
+            { "en": "<h6>", "rw": "<h6>" },
+            { "en": "<head>", "rw": "<head>" },
+            { "en": "<h1>", "rw": "<h1>" },
+            { "en": "<heading>", "rw": "<heading>" }
+          ],
+          "correctIndex": 2
+        },
+        {
+          "type": "matching",
+          "question": { "en": "Match the HTML tag to its function:", "rw": "Huza itagi ya HTML n'icyo ikora:" },
+          "pairs": [
+            { "left": { "en": "<a>", "rw": "<a>" }, "right": { "en": "Hyperlink", "rw": "Ihuza" } },
+            { "left": { "en": "<img>", "rw": "<img>" }, "right": { "en": "Image", "rw": "Ifoto" } },
+            { "left": { "en": "<p>", "rw": "<p>" }, "right": { "en": "Paragraph", "rw": "Igika" } }
+          ]
+        },
+        {
+          "type": "mcq",
+          "question": { "en": "What is the correct HTML element for inserting a line break?", "rw": "Ni ikihe kintu cya HTML gikoreshwa mu gushyiraho itandukaniro ry'imirongo (line break)?" },
+          "options": [
+            { "en": "<break>", "rw": "<break>" },
+            { "en": "<lb>", "rw": "<lb>" },
+            { "en": "<br>", "rw": "<br>" },
+            { "en": "<hr>", "rw": "<hr>" }
+          ],
+          "correctIndex": 2
+        },
+        {
+          "type": "tf",
+          "question": { "en": "The <title> tag goes inside the <body> tag.", "rw": "Itagi ya <title> ishyirwa mu itagi rya <body>." },
+          "correctAnswer": false
+        }
+      ]
+    },
+    {
+      "id": "topic-2",
+      "title": {
+        "en": "Styling with CSS",
+        "rw": "Gukoresha CSS mu gushushanya"
+      },
+      "notes": {
+        "en": "CSS (Cascading Style Sheets) is used to style the HTML elements. It controls the layout, colors, fonts, and overall appearance of a website. CSS can be added to HTML in three ways: Inline, Internal, and External. The most common and recommended way is using External CSS files.",
+        "rw": "CSS (Cascading Style Sheets) ikoreshwa mu gushushanya ibintu bya HTML. Igenzura imiterere, amabara, inyuguti, n'uko urubuga rugaragara muri rusange. CSS ishobora gushyirwa muri HTML mu buryo butatu: Inline, Internal, n'uburyo bwo hanze (External). Uburyo bwiza kandi bwemewe cyane ni ugukoresha dosiye za CSS zo hanze."
+      },
+      "assessment": [
+        {
+          "type": "mcq",
+          "question": { "en": "What does CSS stand for?", "rw": "CSS isobanura iki?" },
+          "options": [
+            { "en": "Cascading Style Sheets", "rw": "Cascading Style Sheets" },
+            { "en": "Colorful Style Sheets", "rw": "Colorful Style Sheets" },
+            { "en": "Computer Style Sheets", "rw": "Computer Style Sheets" },
+            { "en": "Creative Style Sheets", "rw": "Creative Style Sheets" }
+          ],
+          "correctIndex": 0
+        },
+        {
+          "type": "tf",
+          "question": { "en": "Internal CSS is defined in the <head> section.", "rw": "CSS yo muri HTML (Internal CSS) ishyirwa mu gice cya <head>." },
+          "correctAnswer": true
+        },
+        {
+          "type": "mcq",
+          "question": { "en": "Which CSS property is used to change the text color?", "rw": "Ni iyihe 'property' ya CSS ikoreshwa mu guhindura ibara ry'inyandiko?" },
+          "options": [
+            { "en": "text-color", "rw": "text-color" },
+            { "en": "color", "rw": "color" },
+            { "en": "fgcolor", "rw": "fgcolor" },
+            { "en": "font-color", "rw": "font-color" }
+          ],
+          "correctIndex": 1
+        },
+        {
+          "type": "matching",
+          "question": { "en": "Match CSS selectors to their meaning:", "rw": "Huza ibice bya CSS n'icyo bisobanura:" },
+          "pairs": [
+            { "left": { "en": "#id", "rw": "#id" }, "right": { "en": "Unique element", "rw": "Kintu cyihariye" } },
+            { "left": { "en": ".class", "rw": ".class" }, "right": { "en": "Group of elements", "rw": "Itsinda ry'ibintu" } },
+            { "left": { "en": "element", "rw": "element" }, "right": { "en": "All elements of type", "rw": "Ibintu byose by'ubwo bwoko" } }
+          ]
+        },
+        {
+          "type": "mcq",
+          "question": { "en": "Which property is used to change the font of an element?", "rw": "Ni iyihe 'property' ikoreshwa mu guhindura inyuguti (font) y'ikintu?" },
+          "options": [
+            { "en": "font-family", "rw": "font-family" },
+            { "en": "font-style", "rw": "font-style" },
+            { "en": "font-weight", "rw": "font-weight" },
+            { "en": "font-type", "rw": "font-type" }
+          ],
+          "correctIndex": 0
+        },
+        {
+          "type": "tf",
+          "question": { "en": "The default value for the 'float' property is 'left'.", "rw": "Agaciro gasanzwe ka 'float' ni 'left'." },
+          "correctAnswer": false
+        }
+      ]
+    }
+  ],
+  "finalAssessment": [
+    { "type": "tf", "question": { "en": "HTML5 is the latest version of HTML.", "rw": "HTML5 niyo verisiyo ya nyuma ya HTML." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "Which tag is used to create an ordered list?", "rw": "Ni iyihe tagi ikoreshwa mu gukora urutonde ruriho imibare?" }, "options": [{ "en": "<ul>", "rw": "<ul>" }, { "en": "<list>", "rw": "<list>" }, { "en": "<ol>", "rw": "<ol>" }, { "en": "<li>", "rw": "<li>" }], "correctIndex": 2 },
+    { "type": "tf", "question": { "en": "CSS stands for Cascading Style Sheets.", "rw": "CSS isobanura 'Cascading Style Sheets'." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "Which property is used to change background color?", "rw": "Ni iyihe 'property' ikoreshwa mu guhindura ibara ry'inyuma?" }, "options": [{ "en": "color", "rw": "color" }, { "en": "background-color", "rw": "background-color" }, { "en": "bgcolor", "rw": "bgcolor" }, { "en": "theme", "rw": "theme" }], "correctIndex": 1 },
+    { "type": "tf", "question": { "en": "Inline styles are generally recommended for large websites.", "rw": "Gushyira imisusire muri HTML (inline styles) nibyo byerekanwa ku mbuga nini." }, "correctAnswer": false },
+    { "type": "mcq", "question": { "en": "What is the default value of the position property?", "rw": "Agaciro gasanzwe ka 'position' ni akahe?" }, "options": [{ "en": "relative", "rw": "relative" }, { "en": "absolute", "rw": "absolute" }, { "en": "static", "rw": "static" }, { "en": "fixed", "rw": "fixed" }], "correctIndex": 2 },
+    { "type": "matching", "question": { "en": "Match CSS units:", "rw": "Huza ibice bya CSS:" }, "pairs": [
+      { "left": { "en": "px", "rw": "px" }, "right": { "en": "Pixels", "rw": "Pixels" } },
+      { "left": { "en": "em", "rw": "em" }, "right": { "en": "Relative to font size", "rw": "Ikurikije ingano y'inyuguti" } },
+      { "left": { "en": "%", "rw": "%" }, "right": { "en": "Percentage", "rw": "Ijanisha" } }
+    ]},
+    { "type": "mcq", "question": { "en": "Which HTML tag is used to define an internal style sheet?", "rw": "Ni iyihe tagi ya HTML ikoreshwa mu gushyiraho CSS imbere mu rupapuro?" }, "options": [{ "en": "<css>", "rw": "<css>" }, { "en": "<script>", "rw": "<script>" }, { "en": "<style>", "rw": "<style>" }, { "en": "<link>", "rw": "<style>" }], "correctIndex": 2 },
+    { "type": "tf", "question": { "en": "HTML comments start with <!-- and end with -->.", "rw": "Ibisobanuro (comments) muri HTML bitangizwa na <!-- bikarangizwa na -->." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "Which HTML element defines navigation links?", "rw": "Ni ikihe kintu cya HTML gikoreshwa ku mihanda y'urubuga (navigation links)?" }, "options": [{ "en": "<nav>", "rw": "<nav>" }, { "en": "<navigate>", "rw": "<navigate>" }, { "en": "<links>", "rw": "<links>" }, { "en": "<a>", "rw": "<a>" }], "correctIndex": 0 },
+    { "type": "tf", "question": { "en": "The <iframe> tag is used to display a web page within a web page.", "rw": "Itagi ya <iframe> ikoreshwa mu kwerekana urubuga mu rindi ruga." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "How do you make the text bold in HTML?", "rw": "Ni gute wagira inyuguti umubyimba muri HTML?" }, "options": [{ "en": "<bold>", "rw": "<bold>" }, { "en": "<strong>", "rw": "<strong>" }, { "en": "<bb>", "rw": "<bb>" }, { "en": "<i>", "rw": "<i>" }], "correctIndex": 1 },
+    { "type": "tf", "question": { "en": "The <canvas> element is used to draw graphics on the fly.", "rw": "Itagi rya <canvas> rikoreshwa mu gushushanya ibintu ako kanya." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "Which character is used to indicate an end tag?", "rw": "Ni iyihe kamenyetso gakoreshwa mu kwerekana itagi isoza (end tag)?" }, "options": [{ "en": "*", "rw": "*" }, { "en": "/", "rw": "/" }, { "en": "<", "rw": "<" }, { "en": "^", "rw": "^" }], "correctIndex": 1 },
+    { "type": "tf", "question": { "en": "In HTML, all tags must have a closing tag.", "rw": "Muri HTML, itagi ryose rigomba kugira iririsoza." }, "correctAnswer": false },
+    { "type": "mcq", "question": { "en": "Which input type defines a checkbox?", "rw": "Ni ubuhe bwoko bwa 'input' bukora akazu ko guhitamo (checkbox)?" }, "options": [{ "en": "type='check'", "rw": "type='check'" }, { "en": "type='checkbox'", "rw": "type='checkbox'" }, { "en": "type='box'", "rw": "type='box'" }, { "en": "type='button'", "rw": "type='button'" }], "correctIndex": 1 },
+    { "type": "matching", "question": { "en": "Match HTML elements to their meaning:", "rw": "Huza ibice bya HTML n'icyo bisobanura:" }, "pairs": [
+      { "left": { "en": "<footer>", "rw": "<footer>" }, "right": { "en": "Bottom section", "rw": "Igice cy'ubushobozi" } },
+      { "left": { "en": "<header>", "rw": "<header>" }, "right": { "en": "Top section", "rw": "Igice cy'umutwe" } },
+      { "left": { "en": "<main>", "rw": "<main>" }, "right": { "en": "Main content", "rw": "Igice nyamukuru" } }
+    ]},
+    { "type": "mcq", "question": { "en": "Which HTML element is used to specify a footer for a document or section?", "rw": "Ni ikihe kintu cya HTML gikoreshwa mu kwerekana igice cy'ubushobozi (footer)?" }, "options": [{ "en": "<bottom>", "rw": "<bottom>" }, { "en": "<section>", "rw": "<section>" }, { "en": "<footer>", "rw": "<footer>" }, { "en": "<aside>", "rw": "<aside>" }], "correctIndex": 2 },
+    { "type": "tf", "question": { "en": "The <head> element is a container for metadata.", "rw": "Itagi rya <head> ribika amakuru (metadata) y'urubuga." }, "correctAnswer": true },
+    { "type": "mcq", "question": { "en": "What is the correct HTML for adding a background color?", "rw": "Ni iyihe HTML ikwiye mu gushyiraho ibara ry'inyuma?" }, "options": [{ "en": "<body bg='yellow'>", "rw": "<body bg='yellow'>" }, { "en": "<body style='background-color:yellow;'>", "rw": "<body style='background-color:yellow;'>" }, { "en": "<background>yellow</background>", "rw": "<background>yellow</background>" }, { "en": "<body color='yellow'>", "rw": "<body color='yellow'>" }], "correctIndex": 1 }
+  ]
+}
